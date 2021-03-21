@@ -12,6 +12,8 @@ request.onsuccess = event => {
     }
 };
 
+request.onerror = event => console.error(event);
+
 function checkDatabase() {
     // open transaction, access obj store, getAll.onsuccess from store
     const transaction = db.transaction(['pending'], 'readwrite');
