@@ -1,5 +1,3 @@
-const { response } = require("express");
-
 const FILES_TO_CACHE = [
     "/",
     "/index.html",
@@ -7,7 +5,9 @@ const FILES_TO_CACHE = [
     "/indexDb.js",
     "/manifest.webmanifest",
     "/service-worker.js",
-    "/style.css"
+    "/style.css",
+    "/icons/icon-192x192.png",
+    "/icons/icon-512x512.png"
 ];
 
 const CACHE_NAME = "static-cache-v2";
