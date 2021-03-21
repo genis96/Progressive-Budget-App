@@ -11,5 +11,15 @@ const FILES_TO_CACHE = [
 const CACHE_NAME = "static-cache-v2";
 const DATA_CACHE_NAME = "data-cache-v1";
 
+// INSTALL
 
+// ACTIVATE
 
+// FETCH
+
+// SERVE STATIC PG - OFFLINE APPROACH 
+evt.respondWith(
+    cache.match(evt.request).then(response => {
+        return response || fetch(evt.request);
+    })
+);
