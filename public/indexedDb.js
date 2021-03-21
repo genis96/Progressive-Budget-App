@@ -34,10 +34,11 @@ function checkDatabase() {
             }).then((response) => response.json())
             .then(() => {
                 transaction = db.transaction['pending', 'readwrite'];
+                store = transaction.objectStore('pending');
                 store.clear();
-            })
+            });
         }
-    }
+    };
 }
 
 window.addEventListener('online', checkDatabase);
