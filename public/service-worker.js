@@ -40,6 +40,12 @@ self.addEventListener("activate", function(evt) {
 });
 
 // FETCH
+self.addEventListener("fetch", function(evt) {
+    // request to the api
+    if(evt.request.url.includes("/api/")) {
+        
+    }
+});
 
 // SERVE STATIC PG - OFFLINE APPROACH 
 evt.respondWith(
