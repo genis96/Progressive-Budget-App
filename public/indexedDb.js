@@ -1,8 +1,8 @@
-let db; 
 const request = indexedDB.open(`budget`, 1);
 
 request.onupgradeneeded = event => {
-    db = request.result;
+    const db = request.result;
+    db.createObjectStore('pending', { autoIncrement:  true });
     console.log(event);
 }
 
