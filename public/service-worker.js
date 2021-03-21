@@ -23,6 +23,21 @@ self.addEventListener("install", function(evt) {
 });
 
 // ACTIVATE
+self.addEventListener("activate", function(evt) {
+    evt.waitUntil(
+        caches.keys().then(keyList => {
+            return Promise.all(
+                keyList.map(key => {
+                    if(key !== CACHE_NAME && key !== DATA_CACHE_NAME) {
+                        return caches.delete(key);
+                        // console.log('remove old caches', key);
+                    }
+                })
+            );
+        })
+    );
+    self.clients.claim();
+});
 
 // FETCH
 
